@@ -71,6 +71,16 @@
 <link href="data:text/css,%3Ais(%5Bid*%3D'google_ads_iframe'%5D%2C%5Bid*%3D'taboola-'%5D%2C.taboolaHeight%2C.taboola-placeholder%2C%23credential_picker_container%2C%23credentials-picker-container%2C%23credential_picker_iframe%2C%5Bid*%3D'google-one-tap-iframe'%5D%2C%23google-one-tap-popup-container%2C.google-one-tap-modal-div%2C%23amp_floatingAdDiv%2C%23ez-content-blocker-container)%20%7Bdisplay%3Anone!important%3Bmin-height%3A0!important%3Bheight%3A0!important%3B%7D" rel="stylesheet" type="text/css">
 
 <style>
+    .thf-logo {
+        height: 50px;
+        width: 50px;
+    }
+
+    .wikipedia-logo {
+        width: 7.5em;
+        height: 1.25em;
+    }
+
     .language-menu {
         height: 38px;
     }
@@ -101,6 +111,16 @@
     }
 
 @media only screen and (max-width: 1000px) {
+    .thf-logo {
+        height: 100px;
+        width: 100px;
+    }
+
+    .wikipedia-logo {
+        width: 15em;
+        height: 3.5em;
+    }
+
     .language-menu {
         height: 80px;
     }
@@ -127,6 +147,16 @@
 }
 
 @media only screen and (max-width: 480px) {
+    .thf-logo {
+        height: 75px;
+        width: 75px;
+    }
+
+    .wikipedia-logo {
+        width: 11em;
+        height: 2.6em;
+    }
+
     .language-menu {
         height: 60px;
     }
@@ -153,6 +183,16 @@
 }
 
 @media only screen and (max-width: 380px) {
+    .thf-logo {
+        height: 50px;
+        width: 50px;
+    }
+
+    .wikipedia-logo {
+        width: 7.5em;
+        height: 1.75em;
+    }
+
     .language-menu {
         height: 40px;
     }
@@ -243,12 +283,12 @@ $(function() {
 	<a href="https://ja.wikipedia.org/wiki/%E5%A4%A9%E5%9B%BD%E3%81%AB%E3%81%84%E3%81%A1%E3%81%B0%E3%82%93%E8%BF%91%E3%81%84%E5%B3%B6" target="_blank">
 		<img class="mw-logo-icon" style="margin-left:10px;" src="the-island-closest-to-heaven/wikipedia.png" alt="" aria-hidden="true" height="50" width="50">
 		<span class="mw-logo-container">
-			<img class="mw-logo-wordmark" alt="Wikipedia" src="the-island-closest-to-heaven/wikipedia-wordmark-ja.svg" style="width: 7.5em; height: 1.25em;">
-			<img class="mw-logo-tagline" alt="" src="the-island-closest-to-heaven/wikipedia-tagline-ja.svg" width="100" height="14" style="width: 6.25em; height: 0.875em;">
+			<img class="mw-logo-wordmark " alt="Wikipedia" src="the-island-closest-to-heaven/wikipedia-wordmark-ja.svg">
+			<img class="mw-logo-tagline wikipedia-logo" alt="" src="the-island-closest-to-heaven/wikipedia-tagline-ja.svg" width="100" height="14" style="width: 6.25em; height: 0.875em;">
 		</span>
 	</a>
 	<div class="mw-logo-container" style="margin-right:10px; float:right;"><a href="https://www.youtube.com/@tokyohackfilms" target="_blank">
-		<div style="float:right; margin:13px 3px 10px 0;"><img style="height: 50px; width: 50px;" class="mw-logo-wordmark" src="the-island-closest-to-heaven/orb_only.gif"></div>
+		<div style="float:right; margin:13px 3px 10px 0;"><img class="mw-logo-wordmark thf-logo" src="the-island-closest-to-heaven/orb_only.gif"></div>
 		<div style="font-size:30px; margin:18px 3px 10px 0; float:right;">THF</div>
 	</a></div><br>
 	<br><br>
