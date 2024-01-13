@@ -85,14 +85,21 @@
         height: 1.25em;
     }
 
-    .language-menu {
+    select {
         height: 38px;
     }
 
-	select {
+	select:not(.select-video) {
 		background-color: #090;
 		color: white;
 		width: 100px;
+	}
+
+	.select-video {
+		background-color: #00A;
+		color: white;
+		width: 200px;
+		float: left;
 	}
 
     .video-link {
@@ -126,7 +133,7 @@
         height: 3.5em;
     }
 
-    .language-menu {
+    .select {
         height: 80px;
     }
 
@@ -166,7 +173,7 @@
         height: 2.6em;
     }
 
-    .language-menu {
+    .select {
         height: 60px;
     }
 
@@ -206,7 +213,7 @@
         height: 1.75em;
     }
 
-    .language-menu {
+    .select-menu {
         height: 40px;
     }
 
@@ -260,7 +267,7 @@ cb=googleTranslateElementInit">
 var start = true;
 function filterLanguages() {
 	setTimeout(function() {
-		$("option").each(function(){
+		$("select:not(.select-video) option").each(function(){
 			var l = $(this).val();
 			if (['fr', 'en'].indexOf(l) < 0) {
 				$(this).remove();
@@ -271,9 +278,10 @@ function filterLanguages() {
 			}
 		});
 		
+		$(".select-video").val("");
 		if (start) {
-		    $("select").addClass('language-menu');
-			$("select").prepend("<option selected value='_'>--------</option>");
+		    $("select:not(.select-video)").addClass('select-menu');
+			$("select:not(.select-video)").prepend("<option selected value='_'>--------</option>");
 			start = false;
 		} else {
 			$("iframe").css('height', '0px');
@@ -304,9 +312,6 @@ $(function() {
 		<div class="thf-text" style="margin:18px 3px 10px 0; float:right;">THF</div>
 	</a></div><br>
 	<br><br>
-	<a class="video-link" href="https://www.youtube.com/watch?v=GXp2dq7Kxfc" style="height: 1.25em;" target="_blank">天国にいちばん近い島 - 劇場予告編 (日本語 - フランス語字幕)</a><br>
-	<a class="video-link" href="https://www.youtube.com/watch?v=xhvZ8NVeBlY" style="height: 1.25em;" target="_blank">天国にいちばん近い島 - 劇場予告編 (日本語 - 英語字幕)</a><br>
-	<a class="video-link" href="https://www.youtube.com/watch?v=2BsKTwGmUSw" style="height: 1.25em;" target="_blank">天国にいちばん近い島 - 劇場予告編 (日本語 - 字幕無し)</a>
 </div>
 
 <div style="margin:5px;">
@@ -544,8 +549,34 @@ $(function() {
 </div>
 
 					</nav>
-					<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">天国にいちばん近い島</span></h1>
-							
+					<div style="width:100%;" ><h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">天国にいちばん近い島</span></h1></div>
+<select class="select-video">
+    <option selected value=''>劇場予告編を見る</option>
+    <option selected value='ja'>日本語 - 字幕無し</option>
+    <option selected value='fr'>日本語 - フランス語字幕</option>
+    <option selected value='en'>日本語 - 英語字幕</option>
+</select>
+<script>
+    $(".select-video").change(function(){
+        var l = $(this).val();
+        switch(l) {
+            case 'ja':
+                window.open("https://www.youtube.com/watch?v=2BsKTwGmUSw");
+                break;
+            case 'fr':
+                window.open("https://www.youtube.com/watch?v=GXp2dq7Kxfc");
+                break;
+            case 'en':
+                window.open("https://www.youtube.com/watch?v=xhvZ8NVeBlY");
+                break;
+            default:
+                window.open("https://www.youtube.com/watch?v=GXp2dq7Kxfc");
+        }
+        $(".select-video").val("");
+    });
+</script>
+
+				
 </header>
 				<div class="vector-page-toolbar">
 					<div class="vector-page-toolbar-container">
