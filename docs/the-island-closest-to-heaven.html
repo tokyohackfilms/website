@@ -92,22 +92,10 @@
     select {
         height: 40px !important;
         font-size: 30px !important; 
-        width: 180px !important;  
+        width: 180px !important;
+        background-color: #090;
+		color: white; 
     }
-
-	select:not(.select-video) {
-		background-color: #090;
-		color: white;
-		width: 100px;
-	}
-
-	.select-video {
-		background-color: #00A;
-		color: white;
-		width: 200px;
-		float: left;
-		width: 450px !important;
-	}
 
     #bodyContent {
         font-size: 25px !important;
@@ -145,10 +133,6 @@
         font-size: 30px !important; 
         width: 180px !important;  
     }
-    
-	.select-video {
-		width: 240px;
-	}
  
     .select-menu {
         font-size: 55px !important;
@@ -185,11 +169,7 @@
         width: 11em;
         height: 2.6em;
     }
- 
- 	.select-video {
-		width: 200px;
-	}
-	
+ 	
     .select-menu {
         font-size: 40px !important;
     }
@@ -230,10 +210,6 @@
         height: 30px !important;
         font-size: 20px !important;    
     }
-
-	.select-video {
-		width: 300px !important;
-	}
 
     #bodyContent {
         font-size: 20px !important;
@@ -277,7 +253,7 @@ cb=googleTranslateElementInit">
 var start = true;
 function filterLanguages() {
 	setTimeout(function() {
-		$("select:not(.select-video) option").each(function() {
+		$("option").each(function() {
 			var l = $(this).val();
 			if (['fr', 'en'].indexOf(l) < 0) {
 				$(this).remove();
@@ -288,9 +264,8 @@ function filterLanguages() {
 			}
 		});
 
-		$(".select-video").val("");
 		if (start) {
-			$("select:not(.select-video)").prepend("<option selected value='_'>--------</option>");
+			$("select").prepend("<option selected value='_'>--------</option>");
 			start = false;
 		} else {
 			$("iframe").css('height', '0px');
@@ -298,12 +273,32 @@ function filterLanguages() {
 			$(".skiptranslate").css('background-color', '#0A0');
 		}
 
-		$("select").off("change", filterLanguages);
-		$("select").on("change", filterLanguages);
+		$("select").unbind();
+		$("select").on("change", function(){
+            var language = $(this).val();
+            switch(language) {
+                case 'ja':
+                    $("#video-link").attr("href", "https://www.youtube.com/watch?v=2BsKTwGmUSw");
+                    break;
+                case 'fr':
+                    $("#video-link").attr("href", "https://www.youtube.com/watch?v=GXp2dq7Kxfc");
+                    break;
+                case 'en':
+                    $("#video-link").attr("href", "https://www.youtube.com/watch?v=xhvZ8NVeBlY");
+                    break;
+                default:
+                    $("#video-link").attr("href", "https://www.youtube.com/watch?v=2BsKTwGmUSw");
+            }
+
+            filterLanguages();
+        });
+
 	}, 700)
 }
 
 $(function() {
+    $("#video-link").attr("href", "https://www.youtube.com/watch?v=2BsKTwGmUSw");
+ 
 	filterLanguages();
 })
 </script>
@@ -559,53 +554,11 @@ $(function() {
 
 					</nav>
 
-<select class="select-video">
-    <option selected value=''>劇場予告編</option>
-    <option selected value='ja'>字幕無し</option>
-    <option selected value='fr'>フランス語字幕</option>
-    <option selected value='en'>英語字幕</option>
-</select>
-<script>
-    $(".select-video").change(function(){
-        var l = $(this).val();
-        switch(l) {
-            case 'ja':
-                window.open("https://www.youtube.com/watch?v=2BsKTwGmUSw");
-                break;
-            case 'fr':
-                window.open("https://www.youtube.com/watch?v=GXp2dq7Kxfc");
-                break;
-            case 'en':
-                window.open("https://www.youtube.com/watch?v=xhvZ8NVeBlY");
-                break;
-            default:
-                window.open("https://www.youtube.com/watch?v=GXp2dq7Kxfc");
-        }
-        $(".select-video").val("");
-    });
-</script>
+<a id="video-link" class="thf-text" href="https://www.youtube.com/watch?v=GXp2dq7Kxfc" target="_blank">劇場予告編</a>
 </span>
 
 </header>
-				<div class="vector-page-toolbar">
-					<div class="vector-page-toolbar-container">
-						<div id="right-navigation" class="vector-collapsible">
-				
 
-						</div>
-					</div>
-				</div>
-				<div class="vector-column-end">
-					<div class="vector-sticky-pinned-container">
-						<nav class="vector-page-tools-landmark" aria-label="ページツール">
-							<div id="vector-page-tools-pinned-container" class="vector-pinned-container">
-				
-							</div>
-		</nav>
-						<nav class="vector-client-prefs-landmark" aria-label="閲覧の設定">
-						</nav>
-					</div>
-				</div>
 				<div id="bodyContent" class="vector-body ve-init-mw-desktopArticleTarget-targetContainer" aria-labelledby="firstHeading" data-mw-ve-target-container="">
 					<div class="vector-body-before-content">
 							<div class="mw-indicators">
