@@ -89,10 +89,6 @@
         height: 38px;
     }
 
-    .other-language-button {
-        height:40px;
-    }
-
 	select {
 		background-color: #090;
 		color: white;
@@ -132,10 +128,6 @@
 
     .language-menu {
         height: 80px;
-    }
-
-    .other-language-button {
-        height:80px;
     }
 
 	select {
@@ -178,10 +170,6 @@
         height: 60px;
     }
 
-    .other-language-button {
-        height:60px;
-    }
-
 	select {
 		width: 150px;
 	} 
@@ -220,10 +208,6 @@
 
     .language-menu {
         height: 40px;
-    }
-
-    .other-language-button {
-        height:40px;
     }
 
 	select {
@@ -290,7 +274,6 @@ function filterLanguages() {
 		if (start) {
 		    $("select").addClass('language-menu');
 			$("select").prepend("<option selected value='_'>--------</option>");
-			$("select").parent().append('<a href="mailto:patrick@tokyohackfilms.com?subject=The Island Closest To Heaven - New Translation Request"><img class="other-language-button" style="margin-left:3px; margin-top:-4px; cursor:pointer;" src="the-island-closest-to-heaven/other-language.png"></a>');
 			start = false;
 		} else {
 			$("iframe").css('height', '0px');
