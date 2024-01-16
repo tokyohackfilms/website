@@ -92,7 +92,7 @@
     select {
         height: 40px !important;
         font-size: 30px !important; 
-        width: 180px !important;
+        width: 220px !important;
         background-color: #090;
 		color: white; 
     }
@@ -131,7 +131,7 @@
     select {
         height: 60px !important;
         font-size: 30px !important; 
-        width: 180px !important;  
+        width: 220px !important;
     }
  
     .select-menu {
@@ -259,12 +259,14 @@ function filterLanguages() {
 	setTimeout(function() {
 		$("option").each(function() {
 			var l = $(this).val();
-			if (['fr', 'en'].indexOf(l) < 0) {
+			if (['fr', 'en', 'zh-CN'].indexOf(l) < 0) {
 				$(this).remove();
 			} else if (l == 'fr') {
 				$(this).text('Français');
 			} else if (l == 'en') {
 				$(this).text('English');
+			} else if (l == 'zh-CN') {
+			    $(this).text('中国語（簡体）');
 			}
 		});
 
@@ -289,6 +291,9 @@ function filterLanguages() {
                     break;
                 case 'en':
                     $("#video-link").attr("href", "https://www.youtube.com/watch?v=xhvZ8NVeBlY");
+                    break;
+                case 'zh-CN':
+                    $("#video-link").attr("href", "https://www.youtube.com/watch?v=_DHYtp4Wgyo");
                     break;
                 default:
                     $("#video-link").attr("href", "https://www.youtube.com/watch?v=2BsKTwGmUSw");
